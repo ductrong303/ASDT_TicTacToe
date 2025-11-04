@@ -18,11 +18,12 @@ enum class PlayerType{
 
 class Player
 {
-protected:
+private:
+	Mark m_mark;
 public:
-	Player();
+	Player(Mark mark);
 	virtual ~Player();
-	virtual Cell getNextMove(const vector<vector<CellState>>& board, CellState mark)=0;
+	virtual Cell getNextMove(const vector<vector<Mark>>& board, Mark mark)=0;
 
 };
 

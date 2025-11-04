@@ -8,7 +8,7 @@
 #ifndef CELL_H_
 #define CELL_H_
 
-enum class CellState{
+enum class Mark{
 	X, O, Empty
 };
 

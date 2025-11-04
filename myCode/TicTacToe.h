@@ -21,9 +21,8 @@ class TicTacToe
 private:
 	int m_boardSize;
 	unique_ptr<Player> m_players[2];
-	vector<std::vector<CellState>> m_board;
+	vector<std::vector<Mark>> m_board;
 	Screen* m_screen;
-
 
 public:
 	TicTacToe(int boardSize, Screen* screen);
@@ -31,7 +30,7 @@ public:
 	void play();
 	bool isCellValid(const Cell& c) const;
 	void initPlayers();
-	bool addMoveCheckWin(const Cell& c, CellState mark);
+	bool addMoveCheckWin(const Cell& c, Mark mark);
 
 //	void createPlayer(PlayerType player);
 };

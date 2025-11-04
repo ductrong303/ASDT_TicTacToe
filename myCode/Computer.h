@@ -13,9 +13,10 @@
 class Computer: public Player
 {
 public:
-	Computer();
+	Computer(Mark mark);
 	virtual ~Computer();
-	Cell getNextMove(const vector<vector<CellState>>& board, CellState mark);
+	Cell getNextMove(const vector<vector<Mark>>& board, Mark mark);
+	Cell findRandomValidMove(const vector<vector<Mark>>& board, Mark mark);
 };
 
 #endif /* COMPUTER_H_ */

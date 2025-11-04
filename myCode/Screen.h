@@ -7,13 +7,17 @@
 
 #ifndef SCREEN_H_
 #define SCREEN_H_
+#include "Cell.h"
+#include <vector>
+
+using namespace std;
 
 class Screen
 {
 public:
 	Screen();
 	virtual ~Screen();
-	void print();
+	virtual void print(const vector<vector<Mark>>& board, int boardSize) const = 0;
 };
 
 #endif /* SCREEN_H_ */

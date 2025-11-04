@@ -13,9 +13,9 @@
 class Human: public Player
 {
 public:
-	Human();
+	Human(Mark mark);
 	virtual ~Human();
-	Cell getNextMove(const vector<vector<CellState>>& board, CellState mark);
+	Cell getNextMove(const vector<vector<Mark>>& board, Mark mark);
 };
 
 #endif /* HUMAN_H_ */

@@ -7,10 +7,9 @@
 
 #include "Player.h"
 
-Player::Player()
+Player::Player(Mark mark)
 {
-	// TODO Auto-generated constructor stub
-
+	m_mark = mark;
 }
 
 Player::~Player()

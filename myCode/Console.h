@@ -15,7 +15,7 @@ class Console: public Screen
 public:
 	Console();
 	virtual ~Console();
-	void print(const vector<vector<Mark>>& board, int boardSize) const;
+	void print(const Board& board) const;
 };
 
 #endif /* CONSOLE_H_ */

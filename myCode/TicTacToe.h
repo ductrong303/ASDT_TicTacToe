@@ -13,24 +13,24 @@
 #include "Computer.h"
 #include <memory>
 #include <iostream>
+#include "Board.h"
 using namespace std;
 
 
 class TicTacToe
 {
 private:
-	int m_boardSize;
 	unique_ptr<Player> m_players[2];
-	vector<std::vector<Mark>> m_board;
+	Board m_board;
 	Screen* m_screen;
 
 public:
 	TicTacToe(int boardSize, Screen* screen);
 	virtual ~TicTacToe();
 	void play();
-	bool isCellValid(const Cell& c) const;
+//	bool isCellValid(const Cell& c) const;
 	void initPlayers();
-	bool addMoveCheckWin(const Cell& c, Mark mark);
+//	bool addMoveCheckWin(const Cell& c, Mark mark);
 
 //	void createPlayer(PlayerType player);
 };

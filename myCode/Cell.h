@@ -23,6 +23,16 @@ public:
 	virtual ~Cell();
 	int getRow() const;
 	int getCol() const;
+
+	void setCol(int col)
+	{
+		m_col = col;
+	}
+
+	void setRow(int row)
+	{
+		m_row = row;
+	}
 };
 
 #endif /* CELL_H_ */

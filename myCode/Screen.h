@@ -9,7 +9,7 @@
 #define SCREEN_H_
 #include "Cell.h"
 #include <vector>
-
+#include "Board.h"
 using namespace std;
 
 class Screen
@@ -17,7 +17,7 @@ class Screen
 public:
 	Screen();
 	virtual ~Screen();
-	virtual void print(const vector<vector<Mark>>& board, int boardSize) const = 0;
+	virtual void print(const Board& board) const = 0;
 };
 
 #endif /* SCREEN_H_ */

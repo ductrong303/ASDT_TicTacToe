@@ -10,6 +10,7 @@
 #include <vector>
 #include <iostream>
 #include "Cell.h"
+#include "Board.h"
 using namespace std;
 
 enum class PlayerType{
@@ -18,12 +19,14 @@ enum class PlayerType{
 
 class Player
 {
-private:
+protected:
 	Mark m_mark;
 public:
 	Player(Mark mark);
 	virtual ~Player();
-	virtual Cell getNextMove(const vector<vector<Mark>>& board, Mark mark)=0;
+	virtual Cell getNextMove(const Board& board)=0;
+	Mark getMark() const;
+	Mark getOpponentMark() const;
 
 };
 

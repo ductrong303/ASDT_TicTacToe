@@ -19,13 +19,15 @@ Human::~Human()
 }
 
 
-Cell Human::getNextMove(const vector<std::vector<Mark> > &board, Mark mark)
+Cell Human::getNextMove(const Board& board)
 {
 	//Ask for user Input of x and y coordinator
 	//Create Cell for that state
 	int row, col;
-	cout<< "Insert the row and column of the cell you want to play"<< endl;
+	cout<< "Insert the cell you want to play"<< endl;
+	cout << "Row: " ;
 	cin >> row;
+	cout << "Col: ";
 	cin >> col;
 	return Cell(row, col);
 }

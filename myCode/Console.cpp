@@ -18,34 +18,35 @@ Console::~Console()
 	// TODO Auto-generated destructor stub
 }
 
-void Console::print(const vector<vector<Mark> > &board, int boardSize) const
+void Console::print(const Board& board) const
 {
-	cout << "	";
+	int boardSize = board.getSize();
+	cout << "   ";
 	for(int x = 0; x<boardSize; x++){
-		std::cout << x << "	";
+		cout << x << "   ";
 	}
-	std::cout  << std::endl;
-	std::string state;
+	cout << endl;
+	string state;
 	for(int x = 0; x<boardSize; x++){
 		for(int y = 0; y<boardSize; y++){
 			if(y==0){
-				std::cout << x << "	";
+				cout << x << "  ";
 			}
 
 //			if(board[x][y]==Mark::Empty){
 //						state = ".";
 //			}
 //			else{
-			Mark fieldValue = board[x][y];
+			Mark fieldValue = board.getBoard()[x][y];
 			switch (fieldValue) {
 				case Mark::Empty: state = "."; break;
 				case Mark::X: state = "X"; break;
 				case Mark::O: state = "O"; break;
 //			    }
 			}
-			std::cout << state << "	";
+			cout << state << "   ";
 		}
-		std::cout  << std::endl;
-		std::cout  << std::endl;
+		cout  << endl;
+		cout  << endl;
 	}
 }

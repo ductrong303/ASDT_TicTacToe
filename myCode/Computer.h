@@ -15,8 +15,12 @@ class Computer: public Player
 public:
 	Computer(Mark mark);
 	virtual ~Computer();
-	Cell getNextMove(const vector<vector<Mark>>& board, Mark mark);
-	Cell findRandomValidMove(const vector<vector<Mark>>& board, Mark mark);
+	Cell getNextMove(const Board& board);
+	Cell findRandomValidMove(const Board& board);
+	int returnScore(int depth);
+	int applyMiniMax(Board& board, int depth, bool isMax);
+	int evaluateBoard(const Board& board);
+	Cell findBestMove(Board& board);
 };
 
 #endif /* COMPUTER_H_ */

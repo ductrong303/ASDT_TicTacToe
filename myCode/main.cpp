@@ -9,8 +9,7 @@
 
 using namespace std;
 
-// Add your project's header files here
-// #include "CFraction.h"
+
 
 // Main program
 int main ()

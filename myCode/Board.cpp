@@ -10,6 +10,7 @@
 Board::Board(int boardSize)
 {
 	m_boardSize = boardSize;
+	// Board is a 2D vector - rather than static array size - for a bigger map in the future
 	m_board = vector<vector<Mark>>(m_boardSize,vector<Mark>(m_boardSize, Mark::Empty));
 }
 
@@ -20,6 +21,7 @@ Board::~Board()
 
 bool Board::checkWin(const Cell &c)
 {
+	//Checking win conditions
 	int row = c.getRow();
 	int col = c.getCol();
 	//Check row with placed Mark
@@ -45,10 +47,12 @@ bool Board::checkWin(const Cell &c)
 }
 
 bool Board::isCellValid(const Cell& c) const{
+	//Check if rol and col index valid
 	if (0> c.getRow() || m_boardSize-1 < c.getRow() ){
 		return false;
 	} else if (0> c.getCol() || m_boardSize-1 < c.getCol() ){
 		return false;
+	//If cell is not available
 	} else if (m_board[c.getRow()][c.getCol()] != Mark::Empty){
 		return false;
 	}
@@ -82,7 +86,9 @@ bool Board::isMoveLeft() const
 
 bool Board::checkRowForVictory(int row) const
 {
-	if(m_board[row][0] == m_board[row][1] && m_board[row][1] == m_board[row][2]&& m_board[row][0]!= Mark::Empty){
+	if(m_board[row][0] == m_board[row][1] &&
+			m_board[row][1] == m_board[row][2]&&
+			m_board[row][0]!= Mark::Empty){
 		return true;
 	}
 	return false;
@@ -90,7 +96,9 @@ bool Board::checkRowForVictory(int row) const
 
 bool Board::checkColForVictory(int col) const
 {
-	if(m_board[0][col] == m_board[1][col] && m_board[1][col] == m_board[2][col] && m_board[0][col] != Mark::Empty){
+	if(m_board[0][col] == m_board[1][col] &&
+			m_board[1][col] == m_board[2][col] &&
+			m_board[0][col] != Mark::Empty){
 		return true;
 	}
 	return false;
@@ -98,10 +106,12 @@ bool Board::checkColForVictory(int col) const
 
 bool Board::checkDiagonalsForVictory() const
 {
-	if(m_board[0][0] == m_board[1][1] && m_board[1][1] == m_board[2][2] && m_board[1][1]!= Mark::Empty){
+	if(m_board[0][0] == m_board[1][1] &&
+			m_board[1][1] == m_board[2][2] && m_board[1][1]!= Mark::Empty){
 		return true;
 	}
-	if(m_board[0][2] == m_board[1][1] && m_board[1][1] == m_board[2][0] && m_board[1][1]!= Mark::Empty){
+	if(m_board[0][2] == m_board[1][1] &&
+			m_board[1][1] == m_board[2][0] && m_board[1][1]!= Mark::Empty){
 		return true;
 	}
 	return false;
@@ -110,7 +120,7 @@ bool Board::checkDiagonalsForVictory() const
 Board::Board(const Board& orig)
 {
     m_boardSize = orig.m_boardSize;
-    m_board = orig.m_board; // std::vector handles deep copy automatically
+    m_board = orig.m_board; //vector handles deep copy automatically
 }
 
 Mark Board::getCellValue(const Cell &c) const

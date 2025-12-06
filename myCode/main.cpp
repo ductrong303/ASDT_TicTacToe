@@ -14,9 +14,7 @@ using namespace std;
 // Main program
 int main ()
 {
-    // TODO: Add your program code here
 	cout << "ASDT_Lab1 started." << endl << endl;
-	std::srand(static_cast<unsigned>(std::time(nullptr)));
 	Console console1;
 	TicTacToe game(3, &console1);
 	game.play();
